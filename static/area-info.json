@@ -23,7 +23,7 @@
             "tracks": [
                 "Spade Street"
             ],
-            "control": "SCORPIONS"
+            "control": "STACKED DECK"
         },
         {
             "id": 4,
@@ -31,7 +31,7 @@
             "tracks": [
                 "Refinery Downs"
             ],
-            "control": "OWERLORDS"
+            "control": "OVERLORDS"
         },
         {
             "id": 5,
@@ -173,7 +173,7 @@
             "tracks": [
                 "Garden Boulevard (D)"
             ],
-            "control": "OWERLORDS"
+            "control": "OVERLORDS"
         },
         {
             "id": 22,
@@ -220,7 +220,7 @@
                 "Station & Fisher",
                 "Stadium & Hwy 1"
             ],
-            "control": "OWERLORDS"
+            "control": "OVERLORDS"
         },
         {
             "id": 27,
@@ -230,7 +230,7 @@
                 "Heritage & Campus (B)",
                 "GhostWood"
             ],
-            "control": "SCORPIONS"
+            "control": "OVERLORDS"
         },
         {
             "id": 28,
@@ -238,7 +238,7 @@
             "tracks": [
                 "Park Boundary"
             ],
-            "control": "OWERLORDS"
+            "control": "OVERLORDS"
         }
     ],
     "gray_point": [
@@ -287,7 +287,7 @@
                 "West Park & Forest",
                 "Little Italy"
             ],
-            "control": "OWERLORDS"
+            "control": "OVERLORDS"
         },
         {
             "id": 34,

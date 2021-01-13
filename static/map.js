@@ -59,7 +59,8 @@ let rockportPoints = {
 };
 
 
-let areaInfoBlock = document.getElementById('area-info-block'),
+let teamSelectBlock = document.getElementById('team-select-block'),
+	areaInfoBlock = document.getElementById('area-info-block'),
 	trackList = document.getElementById('track-list'),
 	areaName = document.getElementById('area-name'),
 	controlInfo = document.getElementById('control-info'),
@@ -111,6 +112,10 @@ function drawTerritory(city, territoryPoints, areaInfo, teamInfo, textures) {
 	let textureKey = 'NEUTRAL';
 	let arrArea = [];
 
+	// to hide the teamSelectBlock when hovering over onother area
+	let nextId = null;
+	let thisId = null;
+
 	for (let i = 0; i < territoryPoints.length; i++) {
 		textureKey = whoControls(areaInfo, teamInfo, i);
 
@@ -121,6 +126,12 @@ function drawTerritory(city, territoryPoints, areaInfo, teamInfo, textures) {
 		arrArea[i].on('mouseover', function() {
 		    this.stroke('gold');
 		    showInfo(this, areaInfo);
+
+		    if (document.location.pathname == '/admin') {
+		    	nextId = thisId;
+		    	thisId = areaInfo[this.attrs.id - 1]['id'];
+				adminChanges(this, areaInfo, teamInfo, nextId);
+			}
 
 		    // stage.container().style.cursor = 'crosshair';
 		    if (isNeutral)
@@ -266,6 +277,57 @@ function showLeaderBoard() {
 					<td class='score'>${ sortObj[i]['score'] }</td></tr>`;
 		isLeader = '';
 	}
+}
+
+function adminChanges(area, territoryInfo, teamInfo, nextId) {
+
+	teamSelectBlock.innerHTML = '';
+
+	if (nextId != territoryInfo[area.attrs.id - 1]['id'])
+		teamSelectBlock.style.display = 'none';
+
+	// if neutral area
+	if (territoryInfo[area.attrs.id - 1]['tracks'].length == 0) {
+		teamSelectBlock.style.display = 'none';
+		return 0;
+	}
+
+	teamSelectBlock.innerHTML += `<option value='NEUTRAL'} selected>NEUTRAL</option>`;
+	for (let key in teamInfo) {
+		if (key == territoryInfo[area.attrs.id - 1]['control'] && territoryInfo[area.attrs.id - 1]['control'] != '') {
+			teamSelectBlock.innerHTML += `<option value='${ key }'} selected>${ key }</option>`;
+		}
+		else
+			teamSelectBlock.innerHTML += `<option value='${ key }'} >${ key }</option>`;
+	}
+	
+	teamSelectBlock.onchange = () => {
+
+		const request = new XMLHttpRequest();
+		const params = `selected-team=${ teamSelectBlock.value }&area-id=${ territoryInfo[area.attrs.id - 1]['id'] }`;
+		
+		request.open('POST', '/admin?' + params);
+		request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		request.addEventListener('readystatechange', () => {
+
+	    	if (request.readyState === 4 && request.status === 200) {       
+				console.log('sent changes');
+				// console.log(params);
+			}
+		});
+		request.send(params);
+		teamSelectBlock.style.display = 'none';
+	}
+
+	area.addEventListener('contextmenu', (e) => {
+		e.preventDefault();
+		// let x = e.pageX - e.target.offsetLeft,
+			// y = e.pageY - e.target.offsetTop;
+		teamSelectBlock.style.left = e.pageX + 'px';
+		teamSelectBlock.style.top = e.pageY + 'px';
+
+		teamSelectBlock.style.display = 'block';
+	});
 }
 
 document.documentElement.addEventListener('mousemove', (e) => {

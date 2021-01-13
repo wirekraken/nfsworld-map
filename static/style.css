@@ -127,6 +127,21 @@ body {
 
 }
 
+#team-select-block {
+	background: rgba(27, 37, 61, .8);
+	color:white;
+	position: absolute;
+	z-index: 99;
+	display: none;
+
+}
+
+#team-select-block option {
+	background: rgba(0, 3, 23, .3);
+	color: #c4c4c4;
+
+}
+
 #corr {
 	position: absolute;
 	margin-top: 300px;

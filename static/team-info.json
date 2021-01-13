@@ -1,15 +1,16 @@
 {
-    "OWERLORDS": {
-        "name": "OWERLORDS",
+    "OVERLORDS": {
+        "name": "OVERLORDS",
         "color": "lightblue",
         "texture": "ov.png",
         "logo": "Overlords.png",
         "control_id": [
-            26,
             33,
             21,
             28,
-            4
+            4,
+            27,
+            26
         ]
     },
     "SCORPIONS": {
@@ -18,14 +19,12 @@
         "texture": "un.png",
         "logo": "Scorpios.png",
         "control_id": [
-            23,
             36,
             5,
             20,
             29,
             25,
-            3,
-            27
+            23
         ]
     },
     "STACKED DECK": {
@@ -39,7 +38,8 @@
             2,
             37,
             35,
-            7
+            7,
+            3
         ]
     },
     "21st STREET CREW": {
