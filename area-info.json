@@ -1,0 +1,326 @@
+{
+    "silverton": [
+        {
+            "id": 1,
+            "area_name": "Diamond Hills",
+            "tracks": [
+                "Savannah Street",
+                "Blackwell Bridge (1?2)"
+            ],
+            "control": "STACKED DECK"
+        },
+        {
+            "id": 2,
+            "area_name": "Starlight Strip",
+            "tracks": [
+                "North BroadWay"
+            ],
+            "control": "21st STREET CREW"
+        },
+        {
+            "id": 3,
+            "area_name": "Shady Pines",
+            "tracks": [
+                "Spade Street"
+            ],
+            "control": "21st STREET CREW"
+        },
+        {
+            "id": 4,
+            "area_name": "Silverton Refinery",
+            "tracks": [
+                "Refinery Downs"
+            ],
+            "control": "SCORPIONS"
+        },
+        {
+            "id": 5,
+            "area_name": "Infinity Park",
+            "tracks": [
+                "Eagle Drive"
+            ],
+            "control": "SCORPIONS"
+        },
+        {
+            "id": 6,
+            "area_name": "Neon Mile",
+            "tracks": [],
+            "control": "STACKED DECK"
+        },
+        {
+            "id": 7,
+            "area_name": "Canmor Downs",
+            "tracks": [
+                "Starlight Street"
+            ],
+            "control": "21st STREET CREW"
+        }
+    ],
+    "fortuna": [
+        {
+            "id": 8,
+            "area_name": "Palmont University",
+            "tracks": [
+                "University Way"
+            ],
+            "control": "BLACK HEARTS"
+        },
+        {
+            "id": 9,
+            "area_name": "Hillsborough",
+            "tracks": [
+                "North Bellezza"
+            ],
+            "control": "STACKED DECK"
+        },
+        {
+            "id": 10,
+            "area_name": "Fortuna Heights",
+            "tracks": [
+                "Agostini Avenue (D)"
+            ],
+            "control": "OWERLORDS"
+        },
+        {
+            "id": 11,
+            "area_name": "South Fortuna",
+            "tracks": [
+                "Central Crossroads",
+                "South Fortuna Circuit",
+                "Ocean View (B) (4?5)"
+            ],
+            "control": "OWERLORDS"
+        },
+        {
+            "id": 12,
+            "area_name": "Ocean View",
+            "tracks": [
+                "Verona Tunnel"
+            ],
+            "control": "SCORPIONS"
+        }
+    ],
+    "kempton": [
+        {
+            "id": 13,
+            "area_name": "Morgan Beach",
+            "tracks": [
+                "Central Coast",
+                "Dover And Lepus"
+            ],
+            "control": "BLACK HEARTS"
+        },
+        {
+            "id": 14,
+            "area_name": "The Projects",
+            "tracks": [
+                "The Tutorial",
+                "Dover Street (B) (2?3)"
+            ],
+            "control": "OWERLORDS"
+        },
+        {
+            "id": 15,
+            "area_name": "Eskuri Plaza",
+            "tracks": [],
+            "control": "OWERLORDS"
+        },
+        {
+            "id": 16,
+            "area_name": "Newport Industrial Park",
+            "tracks": [
+                "Kempton Docks",
+                "Mission Street"
+            ],
+            "control": "21st STREET CREW"
+        },
+        {
+            "id": 17,
+            "area_name": "Kempton Holdings",
+            "tracks": [],
+            "control": "BUSHIDO"
+        }
+    ],
+    "td_palmont": [
+        {
+            "id": 18,
+            "area_name": "Old Quarter",
+            "tracks": [
+                "North Road",
+                "Old Quarter"
+            ],
+            "control": "SCORPIONS"
+        },
+        {
+            "id": 19,
+            "area_name": "Mason District",
+            "tracks": [
+                "Main Street"
+            ],
+            "control": "OWERLORDS"
+        },
+        {
+            "id": 20,
+            "area_name": "Billings District",
+            "tracks": [
+                "Mason Street"
+            ],
+            "control": "SCORPIONS"
+        },
+        {
+            "id": 21,
+            "area_name": "Kings Park",
+            "tracks": [
+                "Garden Boulevard (D)"
+            ],
+            "control": "21st STREET CREW"
+        },
+        {
+            "id": 22,
+            "area_name": "Historic Chinatown",
+            "tracks": [
+                "Chinatown Tram",
+                "Silk Road (E)"
+            ],
+            "control": "BUSHIDO"
+        }
+    ],
+    
+    "rosewood": [
+        {
+            "id": 23,
+            "area_name": "Heritage Heights",
+            "tracks": [
+                "Rosewood Park Loop",
+                "Rockport Loop"
+            ],
+            "control": ""
+        },
+        {
+            "id": 24,
+            "area_name": "Forest Green Country Club",
+            "tracks": [],
+            "control": ""
+        },
+        {
+            "id": 25,
+            "area_name": "Rosewood College Campus",
+            "tracks": [
+                "Rosewood & Lyons",
+                "Clubhouse & Hollis",
+                "Rosewood Central (C)"
+            ],
+            "control": ""
+        },
+        {
+            "id": 26,
+            "area_name": "Downtown Rosewood",
+            "tracks": [
+                "College Asylum",
+                "Union & Hollis",
+                "Station & Fisher",
+                "Stadium & Hwy 1"
+            ],
+            "control": ""
+        },
+        {
+            "id": 27,
+            "area_name": "Petersburg",
+            "tracks": [
+                "Heritage & Diamond",
+                "Heritage & Campus (B)",
+                "GhostWood"
+            ],
+            "control": ""
+        },
+        {
+            "id": 28,
+            "area_name": "Highlander Stadium",
+            "tracks": [
+                "Park Boundary"
+            ],
+            "control": ""
+        }
+    ],
+    "gray_point": [
+        {
+            "id": 29,
+            "area_name": "Northern Gray Point",
+            "tracks": [
+                "Bristol & Bayshore (E)",
+                "Camden & Route 55"
+            ],
+            "control": ""
+        },
+        {
+            "id": 30,
+            "area_name": "Southern Gray Point",
+            "tracks": [
+                "Waterfront (A)",
+                "Oil Refinery (C)"
+            ],
+            "control": ""
+        }
+    ],
+    "camden": [
+        {
+            "id": 31,
+            "area_name": "Masterson Harbour",
+            "tracks": [
+                "Camden Tunnel"
+            ],
+            "control": ""
+        },
+        {
+            "id": 32,
+            "area_name": "Point Camden",
+            "tracks": [
+                "Camden Hills"
+            ],
+            "control": ""
+        }
+    ],
+    "td_rockport": [
+        {
+            "id": 33,
+            "area_name": "Rockport Valley Airport",
+            "tracks": [
+                "West Park & Forest",
+                "Little Italy"
+            ],
+            "control": ""
+        },
+        {
+            "id": 34,
+            "area_name": "Fairmount Bowl",
+            "tracks": [
+                "East Park (S)"
+            ],
+            "control": ""
+        },
+        {
+            "id": 35,
+            "area_name": "Agostini Heights",
+            "tracks": [
+                "Iron Horse (A)"
+            ],
+            "control": ""
+        },
+        {
+            "id": 36,
+            "area_name": "Downtown Rockport",
+            "tracks": [
+                "Bond & Country Club"
+            ],
+            "control": ""
+        },
+        {
+            "id": 37,
+            "area_name": "Riverfront",
+            "tracks": [
+                "Riverfront & Green"
+            ],
+            "control": ""
+        }
+    ]
+}

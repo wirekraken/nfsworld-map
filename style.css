@@ -1,0 +1,137 @@
+html {
+	cursor: none;
+
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/*overflow: hidden;*/
+	background-image: url(bg-texture.png);
+	background-repeat: repeat;
+	background-size: 26.75px;
+	background-position: -1.6px -1px;
+	/*transform: scale(0.9)*/
+
+}
+
+#container {
+	display: inline-block;
+	background-image: url(background.png);
+	/*background-position: center;*/
+	background-repeat: no-repeat;
+	/*background-size: contain;*/
+	background-size: 100%;
+	float: left;
+
+}
+
+#img-road {
+	position: absolute;
+	z-index: 10;
+	/*width: 1074;*/
+	pointer-events: none;
+
+}
+
+#area-info-block {
+	font-family: Ubuntu, Arial;
+	background: rgba(0, 0, 20, .85);
+	border-radius: 6px;
+	min-width: 300px;
+	color: #c5d5e3;
+	position: absolute;
+	z-index: 10;
+	padding: 10px;
+	left: 0;
+	display: none;
+
+} 
+
+#area-info-block ul {
+	list-style: none;
+	padding: 0;
+
+}
+
+#area-info-block ul li{
+	background: rgba(27, 37, 61, .5);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	margin: 4px 0 4px 0;
+	padding: 10px 4px 10px 45px;
+
+}
+
+#area-name {
+	color: #dbeeff;
+	background: #000025;
+	border: 2px solid #000040;
+	display: block;
+	width: 96%;
+	font-size: 20px;
+	padding: 6px 0 6px 6px ;
+
+}
+
+#team-info-block {
+	font-family: Ubuntu, Arial;
+	background: rgba(40, 0, 80, .1);
+	border-radius: 6px;
+	box-shadow: 2px 2px 100px #111, -2px 0 100px #111;
+	/*min-width: 220px;*/
+	font-size: 15px;
+	color: #c5d5e3;
+	padding: 10px;
+	float: left;
+
+}
+
+#team-info-block table {
+	width: 100%;
+
+}
+
+#team-info-block table tr {
+	background: rgba(27, 37, 61, .8);
+
+}
+
+#team-info-block .score {
+	color: red;
+	min-width: 20px;
+	text-align: center;
+
+}
+
+#team-info-block .name {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	margin: 4px 0 4px 0;
+	padding: 4px 10px 4px 40px;
+
+}
+
+#team-info-block .leader {
+	border: 1px solid gold;
+
+}
+
+#cursor {
+	position: absolute;
+	pointer-events: none;
+	z-index: 99;
+	display: none;
+
+}
+
+#corr {
+	position: absolute;
+	margin-top: 300px;
+	margin-left: 890px;
+	color: white;
+	z-index: 99;
+
+}
