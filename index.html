@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+
+</head>
+<body>
+	<span id='corr'></span>
+	<img src="road.png" width="1074">
+	<div id='container'></div>
+	
+	<style>
+		#container {
+			display: inline-block;
+			background-image: url(background.png);
+			border: 1px solid red;
+			background-repeat: no-repeat;
+			/*background-size: contain;*/
+			background-size: 100%;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			background-repeat: repeat;
+			background-size: 26.75px;
+			background-position: -1.6px -1px;
+		}
+		img {
+			position: absolute;
+			z-index: 10;
+			pointer-events: none;
+		}
+		#corr {
+			position: absolute;
+			margin-top: 220px;
+			margin-left: 890px;
+			color: white;
+			z-index: 100
+		}
+	</style>
+	<script type="text/javascript">
+
+		const width = window.innerWidth - 1074; // стандартная ширина картинки в документе
+
+		const stage = new Konva.Stage({
+		    container: 'container',
+		    width: window.innerWidth - width,
+		    height: (window.innerWidth - width) / 1.821, // для сохраниения пропорций
+
+		});
+
+		const palmont = new Konva.Layer();
+		const rockport = new Konva.Layer();
+
+		function drawTerritory(city, territoryPoints, fill) {
+
+			let arrArea = [];
+
+			for (let i = 0; i < territoryPoints.length; i++) {
+
+				arrArea[i] = drawArea(territoryPoints[i], fill);
+				city.add(arrArea[i]);
+
+				arrArea[i].on('mouseover touchstart', function() {
+				    this.stroke('gold');
+				    // this.fill('rgba(250, 250, 0, .3)');
+				    // this.strokeWidth(4);
+				    this.moveToTop(); // поднимаем по z-index
+				    city.draw();
+				});
+
+				arrArea[i].on('mouseleave touchend', function() {
+				    this.stroke('black');
+				    city.draw();
+				});
+			}
+			stage.add(city);	
+		}
+
+		function drawArea(points, fill) {
+			let area = new Konva.Line({
+				points: points,
+				fill: fill,
+				stroke: 'black',
+				lineJoin: 'bevel',
+				strokeWidth: 2.5,
+				closed: true,
+			});
+			return area;			
+		}
+
+		function drawText(city, text, x, y) {
+			let textObj = new Konva.Text({
+		        x: x,
+		        y: y,
+		        text: text,
+		        fontSize: 17,
+		        fontFamily: 'Calibri',
+		        fill: '#ccc',
+	      	});
+			city.add(textObj)
+			stage.add(city)
+		}
+
+		drawText(palmont, 'SILVERTON', 205, 60);
+		drawText(palmont, 'FORTUNA', 145, 190);
+		drawText(palmont, 'KEMPTON', 106, 447);
+		// drawText(palmont, 'FORTUNA', 145, 182);
+		drawText(rockport, 'ROSEWOOD', 875, 40);
+		drawText(rockport, 'GRAY \n POINT', 1015, 205);
+		drawText(rockport, 'CAMDEN BEACH', 930, 524);
+
+		let silverton_points = [
+			[322, 21, 376, 21, 389, 40, 406, 40, 406, 108, 398, 108, 398, 119, 382, 151, 405, 185, 347, 185, 290, 71],
+			[406, 40, 428, 40, 440, 21, 451, 21, 451, 139, 430, 139, 398, 119, 398, 108, 406, 108],
+			[451, 21, 469, 21, 480, 39, 488, 39, 482, 67, 500, 115, 490, 115, 476, 139, 451, 139],
+			[488, 39, 502, 39, 510, 60, 518, 60, 530, 115, 500, 115, 482, 67],
+			[490, 115, 530, 115, 536, 139, 506, 196, 476, 196, 476, 139],
+			[398, 119, 430, 139, 476, 139, 476, 190, 405, 190, 405, 185, 382, 151,],
+			[347, 185, 405, 185, 405, 190, 476, 190, 476, 196, 506, 196, 512, 220, 490, 220, 480, 234, 415, 234, 405, 220, 364, 220]
+		]; 
+
+		let fortuna_points = [
+			[32, 180, 112, 180, 130, 227, 170, 227, 128, 291, 42, 291, 12, 226],
+			[169, 227, 198, 227, 204, 217, 240, 217, 270, 256, 284, 256, 290, 264, 229, 300, 229, 314, 212, 327, 151, 327, 114, 291, 128, 291],
+			[290, 264, 302, 280, 286, 313, 276, 313, 303, 354, 278, 408, 237, 408, 238, 345, 212, 327, 229, 314, 229, 300],
+			[151, 327, 212, 327, 238, 345, 238, 408, 226, 408, 214, 393, 160, 393, 149, 408, 123, 408],
+			[50, 291, 114, 291, 151, 327, 123, 408, 89, 408, 80, 390, 46, 390, 20, 342]
+
+		];
+
+		let kempton_points = [
+			[209, 420, 291, 420, 280, 444, 363, 562, 342, 587, 281, 587, 190, 450],
+			[291, 420, 296, 409, 355, 409, 375, 450, 402, 465, 390, 480, 350, 478, 314, 493, 280, 444],
+			[355, 409, 365, 392, 457, 392, 465, 404, 425, 465, 402, 465, 375, 450],
+			[465, 404, 471, 413, 478, 401, 529, 401, 547, 432, 526, 464, 502, 464, 463, 528, 440, 528, 440, 493, 425, 465],
+			[314, 493, 350, 478, 390, 480, 402, 465, 425, 465, 440, 493, 440, 528, 423, 528, 400, 562, 363, 562]
+
+		];
+
+		//3  2>   356, 391, 348, 404, 325, 404, 311, 383]
+		let td_palmont_points = [
+			[356, 229, 396, 229, 406, 242, 450, 242, 423, 291, 434, 338, 329, 338, 320, 326, 328, 310, 320, 296],
+			[450, 242, 477, 242, 477, 341, 485, 362, 485, 395, 473, 395, 468, 387, 434, 387, 434, 338, 423, 291],
+			[477, 242, 492, 242, 502, 228, 518, 228, 545, 267, 528, 312, 546, 329, 528, 357, 528, 395, 485, 395, 485, 362, 477, 341],
+			[545, 267, 567, 267, 574, 277, 590, 277, 612, 328, 586, 373, 563, 373, 550, 395, 528, 395, 528, 357, 546, 329, 528, 312],
+			[329, 338, 434, 338, 434, 387, 358, 387, 350, 400, 326, 400, 314, 380, 325, 354, 340, 355]
+		];
+
+		let rosewood_points = [
+			[570, 10, 676, 10, 688, 24, 730, 24, 730, 88, 694, 88, 688, 82, 648, 82, 642, 88, 622, 88, 602, 105, 580, 86, 552, 86, 525, 59],
+			[730, 24, 766, 24, 780, 8, 832, 8, 866, 44, 866, 88, 856, 88, 820, 160, 808, 160, 826, 206, 774, 206, 764, 196, 764, 164, 730, 132],
+			[602, 105, 622, 88, 642, 88, 648, 82, 688, 82, 694, 88, 730, 88, 730, 132, 764, 164, 764, 196, 724, 196, 694, 224, 678, 208, 678, 202, 653, 176, 620, 176, 612, 165, 612, 136, 602, 128],
+			[694, 224, 724, 196, 764, 196, 774, 206, 816, 206, 843, 264, 826, 275, 826, 315, 793, 352, 747, 352, 
+			732, 345, 700, 345, 688, 330, 688, 267, 694, 267],
+			[593, 176, 653, 176, 678, 202, 678, 208, 694, 224, 694, 267, 688, 267, 688, 330, 644, 330, 625, 294, 602, 294, 591, 271, 578, 271, 571, 262, 548, 262, 548, 226, 593, 176],
+			[525, 59, 552, 86, 580, 86, 602, 105, 602, 128, 612, 136, 612, 165, 620, 176, 593, 176, 548, 226, 548, 262, 525, 227, 516, 216, 512, 198, 542, 142]
+		];
+
+		let td_rockport_points = [
+			[624, 350, 655, 350, 665, 360, 678, 360, 678, 404, 660, 426, 660, 456, 612, 491, 612, 544, 550, 544, 528, 508, 556, 464, 578, 464, 613, 410, 605, 382],
+			[678, 360, 704, 360, 712, 354, 736, 354, 747, 358, 747, 378, 740, 387, 740, 458, 712, 458, 680, 426, 660, 426, 678, 404],
+			[747, 358, 794, 358, 820, 378, 820, 434, 834, 434, 850, 487, 828, 544, 800, 494, 776, 494, 740, 458, 740, 387, 747, 378],
+			[660, 426, 680, 426, 712, 458, 740, 458, 776, 494, 748, 513, 737, 513, 726, 523, 682, 523, 674, 513, 634, 513,  612, 491, 660, 456],
+			[612, 491, 634, 513, 674, 513, 682, 523, 726, 523, 737, 513, 748, 513, 776, 494, 800, 494, 828, 544, 746, 568, 730, 552, 696, 552, 678, 568, 630, 568, 612, 544]
+		];
+
+		let camden_points = [
+			[820, 378, 845, 378, 852, 372, 910, 372, 910, 406, 924, 407, 942, 460, 922, 486, 938, 515, 889, 515, 873, 485, 856, 485, 837, 422, 820, 422 ],
+			[910, 372, 938, 372, 960, 350, 998, 350, 1003, 346, 1050, 346, 1065, 403, 1024, 488, 980, 488, 963, 515, 938, 515, 922, 486, 942, 460, 924, 407, 910, 406]
+		];
+
+		let gray_point_points = [
+			[862, 94, 896, 94, 908, 80, 950, 80, 988, 126, 988, 180, 1010, 224, 965, 224, 938, 246, 910, 246, 880, 272, 864, 255, 846, 255, 826, 216, 836, 216, 816, 165, 826, 165 ],
+			[846, 255, 864, 255, 880, 272, 910, 246, 938, 246, 965, 224, 988, 224, 1000, 224, 988, 256, 1048, 338, 992, 338, 986, 344, 959, 344, 935, 368, 818, 367, 802, 354, 837, 316, 837, 273, 850, 265]
+		];
+
+		let palmontPoints = {
+			'silverton_points' : silverton_points,
+			'fortuna_points' : fortuna_points,
+			'kempton_points' : kempton_points,
+			'td_palmont_points' : td_palmont_points,
+		};
+
+		let rockportPoints = {
+			'rosewood' : rosewood_points,
+			'gray_point' : gray_point_points,
+			'camden' : camden_points,
+			'td_rockport' : td_rockport_points,
+		};
+
+		drawTerritory(palmont, palmontPoints['silverton_points'], 'rgba(200, 0, 0, .8)');
+		drawTerritory(palmont, palmontPoints['fortuna_points'], 'rgba(0, 0, 200, .8)');
+		drawTerritory(palmont, palmontPoints['kempton_points'], 'rgba(200, 200, 0, .8)');
+		drawTerritory(palmont, palmontPoints['td_palmont_points'], 'rgba(0, 200, 0, .8)');
+
+		drawTerritory(rockport, rockportPoints['rosewood'], 'rgba(0, 200, 0, .8)');
+		drawTerritory(rockport, rockportPoints['gray_point'], 'rgba(0, 0, 200, .8)');
+		drawTerritory(rockport, rockportPoints['camden'], 'rgba(200, 200, 0, .8)');
+		drawTerritory(rockport, rockportPoints['td_rockport'], 'rgba(200, 0, 0, .8)');
+
+
+		container.addEventListener('mousemove', function(e) {
+			let x = e.pageX - e.target.offsetLeft,
+  			y = e.pageY - e.target.offsetTop;
+  			corr.innerText = x + ' : ' +y;
+ 		});
+
+	</script>
+</body>
+</html>
