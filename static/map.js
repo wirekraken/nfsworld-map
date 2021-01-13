@@ -3,7 +3,7 @@ const width = window.innerWidth - 1074;
 const stage = new Konva.Stage({
     container: 'container',
     width: window.innerWidth - width,
-    height: (window.innerWidth - width) / 1.821, // для сохраниения пропорций
+    height: (window.innerWidth - width) / 1.821
 
 });
 
@@ -58,7 +58,6 @@ let rockportPoints = {
 	'td_rockport' : tdRockportPoints,
 };
 
-// console.log(silverton_info);
 
 let areaInfoBlock = document.getElementById('area-info-block'),
 	trackList = document.getElementById('track-list'),
@@ -82,18 +81,18 @@ function showInfo(area, areaInfo) {
 		teamLogo = 'neutral.png';
 		isNeutral = true;
 	}
-	else{
+	else {
 		teamLogo = teamInfo[areaInfo[area.attrs.id - 1]['control']]['logo'];	
 		isNeutral = false;		
-	} 
-    	
+	}
+
     for (let i = 0; i < trackArr.length; i++)
-		trackList.innerHTML += `<li style='background-image:url(logos/${ teamLogo })'>${ trackArr[i] }</li>`;
+		trackList.innerHTML += `<li style='background-image:url(static/logos/${ teamLogo })'>${ trackArr[i] }</li>`;
 
     areaInfoBlock.style.display = 'block';
 }
 
-// проверяем принадлежит ли текущий район к какий-либо команде
+// проверка на принадлежность района к какий-либо команде
 function whoControls(areaInfo, teamInfo, area) {
 	let textureKey = 'NEUTRAL';
 
@@ -110,36 +109,35 @@ function whoControls(areaInfo, teamInfo, area) {
 function drawTerritory(city, territoryPoints, areaInfo, teamInfo, textures) {
 
 	let textureKey = 'NEUTRAL';
-	let arr_area = [];
+	let arrArea = [];
 
 	for (let i = 0; i < territoryPoints.length; i++) {
 		textureKey = whoControls(areaInfo, teamInfo, i);
 
-		arr_area[i] = drawArea(territoryPoints[i], textureKey, textures, i + 1);
-		city.add(arr_area[i]);
+		arrArea[i] = drawArea(territoryPoints[i], textureKey, textures, i + 1);
+		city.add(arrArea[i]);
 
 		// in context
-		arr_area[i].on('mouseover', function() {
+		arrArea[i].on('mouseover', function() {
 		    this.stroke('gold');
 		    showInfo(this, areaInfo);
 
-		    // stage.container().style.cursor = 'none';
+		    // stage.container().style.cursor = 'crosshair';
 		    if (isNeutral)
-		    	cursor.src = 'def-cursor.png';
+		    	cursor.src = 'static/main_pictures/def-cursor.png';
 		    else
-		    	cursor.src = 'cursor.gif';
-
+		    	cursor.src = 'static/main_pictures/cursor.gif';
 		    // this.strokeWidth(4);
 		    this.moveToTop(); // поднимаем по z-index
 		    city.draw();
 		});
 
-		arr_area[i].on('mouseleave', function() {
+		arrArea[i].on('mouseleave', function() {
 	    	this.stroke('black');
 	    	// stage.container().style.cursor = 'default';
+	    	cursor.src = 'static/main_pictures/def-cursor.png';
 	    	trackList.innerHTML = '';
 	    	areaInfoBlock.style.display = 'none';
-	    	cursor.src = 'def-cursor.png';
 	    	city.draw();
 		});
 	}
@@ -169,10 +167,10 @@ function drawMap() {
 	let textureSources = {};
 
 	for (let key in teamInfo) {
-		textureSources[key] = 'textures/' + teamInfo[key]['texture'];
+		textureSources[key] = 'static/textures/' + teamInfo[key]['texture'];
 	}
 
-	textureSources['NEUTRAL'] = 'textures/neutral.png';
+	textureSources['NEUTRAL'] = 'static/textures/neutral.png';
 
 	loadTextures(textureSources, (textures) => {
 		drawTerritory(palmont, palmontPoints['silverton'], areaInfo['silverton'], teamInfo, textures);
@@ -188,8 +186,8 @@ function drawMap() {
 }
 
 
-let promise = new Promise((resolve) => {
-	loadJSONFiles('team-info.json', (data) => {
+let promise = new Promise((resolve, reject) => {
+	loadJSONFiles('static/team-info.json', (data) => {
         teamInfo = JSON.parse(data);
         console.log('done1')
         resolve();
@@ -198,14 +196,14 @@ let promise = new Promise((resolve) => {
 });
 
 promise.then(() => {
-	return new Promise((resolve) => {
-		loadJSONFiles('area-info.json', (data) => {
+	return new Promise((resolve, reject) => {
+		loadJSONFiles('static/area-info.json', (data) => {
 	        areaInfo = JSON.parse(data);
 	        console.log('done2')
 	        resolve();
 	    });
 	});
-}).then(() =>  {
+}).then(() => {
 	drawMap();
 	showLeaderBoard();
 });
@@ -219,8 +217,8 @@ function drawText(city, text, x, y, size) {
         fontFamily: 'Calibri',
         fill: '#aaa',
       });
-	city.add(textObj)
-	stage.add(city)
+	city.add(textObj);
+	stage.add(city);
 }
 
 drawText(palmont, 'SILVERTON', 215, 45, 16);
@@ -234,9 +232,7 @@ drawText(rockport, 'TOWNDOWN ROCKPORT', 530, 575, 16);
 
 
 function showLeaderBoard() {
-
-	let max = 0;
-
+	
 	function getScore(team) {
 		let score = 0;
 		for (let key in areaInfo) {
@@ -252,14 +248,6 @@ function showLeaderBoard() {
 		return score;
 	}
 
-	let sortArr = [];
-	for (let key in teamInfo) {
-		sortArr.push([key, getScore(key)]);
-
-	}
-	sortArr.sort((a, b) => b[1] - a[1]);
-	console.log(sortArr)
-
 	let sortObj = [];
 	let i = 0;
 	for (let key in teamInfo) {
@@ -274,11 +262,10 @@ function showLeaderBoard() {
 		if (i == 0) {
 			isLeader = 'leader';
 		}
-		teamInfoBlock.innerHTML += `<tr><td class='name ${ isLeader }' style='background-image:url(logos/${ teamInfo[sortObj[i]['name']]['logo'] })'>${ sortObj[i]['name'] }</td>
+		teamInfoBlock.innerHTML += `<tr><td class='name ${ isLeader }' style='background-image:url(static/logos/${ teamInfo[sortObj[i]['name']]['logo'] })'>${ sortObj[i]['name'] }</td>
 					<td class='score'>${ sortObj[i]['score'] }</td></tr>`;
 		isLeader = '';
 	}
-
 }
 
 document.documentElement.addEventListener('mousemove', (e) => {
@@ -293,8 +280,9 @@ document.documentElement.addEventListener('mouseleave', (e) => {
 	cursor.style.display = 'none';
 });
 
-container.addEventListener('mousemove', (e) => {
-	let x = e.pageX - e.target.offsetLeft,
-		y = e.pageY - e.target.offsetTop;
-		corr.innerText = x + ' : ' + y;
-});
+
+// container.addEventListener('mousemove', (e) => {
+// 	let x = e.pageX - e.target.offsetLeft,
+// 		y = e.pageY - e.target.offsetTop;
+// 		corr.innerText = x + ' : ' +y;
+// });

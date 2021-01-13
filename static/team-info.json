@@ -2,66 +2,79 @@
     "OWERLORDS": {
         "name": "OWERLORDS",
         "color": "lightblue",
-        "texture": "ov1.png",
+        "texture": "ov.png",
         "logo": "Overlords.png",
         "control_id": [
-            14,
-            11,
-            10,
-            19
+            26,
+            33,
+            21,
+            28,
+            4
         ]
     },
     "SCORPIONS": {
         "name": "SCORPIONS",
-        "color": "blue",
-        "texture": "un1.png",
+        "color": "darkblue",
+        "texture": "un.png",
         "logo": "Scorpios.png",
         "control_id": [
-            18,
-            12,
-            20,
+            23,
+            36,
             5,
-            4
+            20,
+            29,
+            25,
+            3,
+            27
         ]
     },
     "STACKED DECK": {
         "name": "STACKED DECK",
         "color": "red",
-        "texture": "st2.png",
+        "texture": "st.png",
         "logo": "StackedDeck.png",
         "control_id": [
+            34,
             1,
-            9
+            2,
+            37,
+            35,
+            7
         ]
     },
     "21st STREET CREW": {
         "name": "21st STREET CREW",
         "color": "yellow",
-        "texture": "21s1.png",
+        "texture": "21s.png",
         "logo": "21stStreetCrew.png",
         "control_id": [
+            13,
+            14,
             16,
-            7,
-            2,
-            3,
-            21
+            32
         ]
     },
     "BUSHIDO": {
         "name": "BUSHIDO",
         "color": "green",
-        "texture": "bs1.png",
+        "texture": "bs.png",
         "logo": "Bushido.png",
         "control_id": [
-            22
+            22,
+            18,
+            19
         ]
     },
     "TFK": {
         "name": "TFK",
         "color": "blue",
-        "texture": "tfk1.png",
+        "texture": "tfk.png",
         "logo": "TFK.png",
-        "control_id": []
+        "control_id": [
+            9,
+            8,
+            12
+        ]
     },
     "BLACK HEARTS": {
         "name": "BLACK HEARTS",
@@ -69,8 +82,8 @@
         "texture": "gr.png",
         "logo": "BlackHearts.png",
         "control_id": [
-            8,
-            13
+            11,
+            10
         ]
     }
 }

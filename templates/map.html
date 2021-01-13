@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TTR Map</title>
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='main_pictures/favicon.png') }}"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='points.json') }}"></script>
+	<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+	</head>
+<body>
+	<span id="corr"></span>
+	<img id="img-road" src="{{ url_for('static', filename='main_pictures/road-min.png') }}" width="1074">
+	<img id="cursor" src="{{ url_for('static', filename='main_pictures/def-cursor.png') }}" width="36">
+	<div id="area-info-block">
+		<span id="area-name"></span><br>
+		<span id="control-info"></span>
+		<ul id="track-list"></ul>
+	</div>
+	<div id="container"></div>
+	<div id="team-info-block">
+		<table>
+			<caption>LEADERBOARD</caption>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='map.js') }}"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@
             "tracks": [
                 "North BroadWay"
             ],
-            "control": "21st STREET CREW"
+            "control": "STACKED DECK"
         },
         {
             "id": 3,
@@ -23,7 +23,7 @@
             "tracks": [
                 "Spade Street"
             ],
-            "control": "21st STREET CREW"
+            "control": "SCORPIONS"
         },
         {
             "id": 4,
@@ -31,7 +31,7 @@
             "tracks": [
                 "Refinery Downs"
             ],
-            "control": "SCORPIONS"
+            "control": "OWERLORDS"
         },
         {
             "id": 5,
@@ -45,7 +45,7 @@
             "id": 6,
             "area_name": "Neon Mile",
             "tracks": [],
-            "control": "STACKED DECK"
+            "control": ""
         },
         {
             "id": 7,
@@ -53,7 +53,7 @@
             "tracks": [
                 "Starlight Street"
             ],
-            "control": "21st STREET CREW"
+            "control": "STACKED DECK"
         }
     ],
     "fortuna": [
@@ -63,7 +63,7 @@
             "tracks": [
                 "University Way"
             ],
-            "control": "BLACK HEARTS"
+            "control": "TFK"
         },
         {
             "id": 9,
@@ -71,7 +71,7 @@
             "tracks": [
                 "North Bellezza"
             ],
-            "control": "STACKED DECK"
+            "control": "TFK"
         },
         {
             "id": 10,
@@ -79,7 +79,7 @@
             "tracks": [
                 "Agostini Avenue (D)"
             ],
-            "control": "OWERLORDS"
+            "control": "BLACK HEARTS"
         },
         {
             "id": 11,
@@ -89,7 +89,7 @@
                 "South Fortuna Circuit",
                 "Ocean View (B) (4?5)"
             ],
-            "control": "OWERLORDS"
+            "control": "BLACK HEARTS"
         },
         {
             "id": 12,
@@ -97,7 +97,7 @@
             "tracks": [
                 "Verona Tunnel"
             ],
-            "control": "SCORPIONS"
+            "control": "TFK"
         }
     ],
     "kempton": [
@@ -108,7 +108,7 @@
                 "Central Coast",
                 "Dover And Lepus"
             ],
-            "control": "BLACK HEARTS"
+            "control": "21st STREET CREW"
         },
         {
             "id": 14,
@@ -117,13 +117,13 @@
                 "The Tutorial",
                 "Dover Street (B) (2?3)"
             ],
-            "control": "OWERLORDS"
+            "control": "21st STREET CREW"
         },
         {
             "id": 15,
             "area_name": "Eskuri Plaza",
             "tracks": [],
-            "control": "OWERLORDS"
+            "control": ""
         },
         {
             "id": 16,
@@ -138,7 +138,7 @@
             "id": 17,
             "area_name": "Kempton Holdings",
             "tracks": [],
-            "control": "BUSHIDO"
+            "control": ""
         }
     ],
     "td_palmont": [
@@ -149,7 +149,7 @@
                 "North Road",
                 "Old Quarter"
             ],
-            "control": "SCORPIONS"
+            "control": "BUSHIDO"
         },
         {
             "id": 19,
@@ -157,7 +157,7 @@
             "tracks": [
                 "Main Street"
             ],
-            "control": "OWERLORDS"
+            "control": "BUSHIDO"
         },
         {
             "id": 20,
@@ -173,7 +173,7 @@
             "tracks": [
                 "Garden Boulevard (D)"
             ],
-            "control": "21st STREET CREW"
+            "control": "OWERLORDS"
         },
         {
             "id": 22,
@@ -185,7 +185,6 @@
             "control": "BUSHIDO"
         }
     ],
-    
     "rosewood": [
         {
             "id": 23,
@@ -194,7 +193,7 @@
                 "Rosewood Park Loop",
                 "Rockport Loop"
             ],
-            "control": ""
+            "control": "SCORPIONS"
         },
         {
             "id": 24,
@@ -210,7 +209,7 @@
                 "Clubhouse & Hollis",
                 "Rosewood Central (C)"
             ],
-            "control": ""
+            "control": "SCORPIONS"
         },
         {
             "id": 26,
@@ -221,7 +220,7 @@
                 "Station & Fisher",
                 "Stadium & Hwy 1"
             ],
-            "control": ""
+            "control": "OWERLORDS"
         },
         {
             "id": 27,
@@ -231,7 +230,7 @@
                 "Heritage & Campus (B)",
                 "GhostWood"
             ],
-            "control": ""
+            "control": "SCORPIONS"
         },
         {
             "id": 28,
@@ -239,7 +238,7 @@
             "tracks": [
                 "Park Boundary"
             ],
-            "control": ""
+            "control": "OWERLORDS"
         }
     ],
     "gray_point": [
@@ -250,7 +249,7 @@
                 "Bristol & Bayshore (E)",
                 "Camden & Route 55"
             ],
-            "control": ""
+            "control": "SCORPIONS"
         },
         {
             "id": 30,
@@ -277,7 +276,7 @@
             "tracks": [
                 "Camden Hills"
             ],
-            "control": ""
+            "control": "21st STREET CREW"
         }
     ],
     "td_rockport": [
@@ -288,7 +287,7 @@
                 "West Park & Forest",
                 "Little Italy"
             ],
-            "control": ""
+            "control": "OWERLORDS"
         },
         {
             "id": 34,
@@ -296,7 +295,7 @@
             "tracks": [
                 "East Park (S)"
             ],
-            "control": ""
+            "control": "STACKED DECK"
         },
         {
             "id": 35,
@@ -304,7 +303,7 @@
             "tracks": [
                 "Iron Horse (A)"
             ],
-            "control": ""
+            "control": "STACKED DECK"
         },
         {
             "id": 36,
@@ -312,7 +311,7 @@
             "tracks": [
                 "Bond & Country Club"
             ],
-            "control": ""
+            "control": "SCORPIONS"
         },
         {
             "id": 37,
@@ -320,7 +319,7 @@
             "tracks": [
                 "Riverfront & Green"
             ],
-            "control": ""
+            "control": "STACKED DECK"
         }
     ]
 }
